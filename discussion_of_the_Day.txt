@@ -1,0 +1,83 @@
+Storing the data in memory maybe with some variables or objects , arrays.
+
+Data Persistence=====> The data should out live the program execution.
+
+io package. Input and Output.
+
+For file handling we have to import 
+
+java.io package.
+
+File class is not for input and output operation. It is basically to represent
+a file or a folder. So what this object will do?
+It can refer to a file or a folder and then we can check whether the file or 
+folder is existing or they are readable or not.
+
+While writing and reading we can have two approches:-
+1) byte input and output
+2) character input and output
+---------------------------------------------------------------------------------------------------------------
+For binary read and write 
+
+Binary read =====> FileInputStream
+Binary write ======> FileOutputStream
+------------------------------------------------------------------------------------------------------
+Character read ========> FileReader
+Character write =======> FileWriter
+-------------------------------------------------------------------------------------------------------
+Exception Handling
+1) Checked Exception
+2) Unchecked Exception
+
+What is Checked Exception?
+If a code throws Checked Exception , our program needs to handle the exception either with try catch or
+by throws clause.If we are not doing so , our code will give compilation error.
+
+IOExeception, FileNotFoundException, SQLException =======> All these are examples of Checked Exception.
+
+     Object
+       |
+       |
+      Exception
+       |
+       |------IOException
+                  |
+                  |------FileNotFoundException
+                  |
+                  |------EOFException
+
+
+What is Unchecked Exception?
+Unchecked exception need not require to be handled in the code. If we are not handling we dont get any
+sort of compilation error.
+
+ArrayIndexOutOfBoundsException, NullPointerException ========> Unchecked exception
+------------------------------------------------------------------------------------------------------------
+
+Object data you want to write that should be stored as bytes or the data which we don't read as character
+those data we store as bytes.
+Serialization/Deserialization ======> read and write the data as bytes and not as character.
+----------------------------------------------------------------------------------------------------------
+For the process of Serialization , the class whose object you are planning to serialize , the class needs
+to implement the Serializable interface. Otherwise we will get a exception.
+[ Note Exception in thread "main" java.io.NotSerializableException: com.cts.demo.serialization.Employee]
+
+
+
+   InputStream
+   OutputStream    These are the abstract classes
+
+     InputStream reader=new FileInputStreamReader("data.dat");
+
+    Reader
+    Writer The are the abstract classes we cannot create an object of these classes but they can act
+as a reference
+
+   Reader reader=new Reader("data.txt"); // This is not possible
+   Reader reader=new FileReader("data.txt");
+
+   It is not possible
+   InputStream reader=new InputStreamReader("data.txt"); // not possible
+   InputStream reader=new FileInputStream("data.txt");
+
+    
